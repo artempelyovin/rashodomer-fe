@@ -33,7 +33,7 @@ class BudgetCard extends StatelessWidget {
                     ),
                   TitleText(text: budget.name),
                   // if (kIsWeb)
-                    CopyableId(id: budget.id),
+                  CopyableId(id: budget.id),
                 ],
               ),
             ),
