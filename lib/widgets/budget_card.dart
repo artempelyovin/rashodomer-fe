@@ -17,7 +17,7 @@ class BudgetCard extends StatelessWidget {
     return Card(
       child: InkWell(
         onTap: () {
-          context.push('/budgets/${budget.id}');
+          context.go('/budgets/${budget.id}');
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,8 +32,7 @@ class BudgetCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   TitleText(text: budget.name),
-                  // if (kIsWeb)
-                  CopyableId(id: budget.id),
+                  if (kIsWeb) CopyableId(id: budget.id),
                 ],
               ),
             ),

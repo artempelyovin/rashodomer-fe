@@ -46,19 +46,15 @@ class CopyableId extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () async {
+    return IconButton(
+      icon: const Icon(Icons.copy),
+      tooltip: 'Скопировать ID',
+      onPressed: () async {
         await Clipboard.setData(ClipboardData(text: id));
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(SnackBar(content: Text('Скопировано')));
+        ).showSnackBar(SnackBar(content: Text('Скопировано: $id')));
       },
-      child: Card(
-        child: Padding(
-          padding: EdgeInsets.only(left: 10, right: 10),
-          child: Text('ID'),
-        ),
-      ),
     );
   }
 }
