@@ -36,13 +36,13 @@ class BudgetService {
   }
 
   Future<Budget> getBudget(String budgetId) async {
-    await Future.delayed(Duration(milliseconds: 200 + _random.nextInt(1000)));
+    await Future.delayed(Duration(milliseconds: 5 + _random.nextInt(50)));
     return _generateBudget(budgetId);
   }
 
   Future<List<Budget>> getBudgets() async {
-    await Future.delayed(Duration(milliseconds: 200 + _random.nextInt(1000)));
-    final count = _random.nextInt(30);
+    await Future.delayed(Duration(milliseconds: 15 + _random.nextInt(100)));
+    final count = 1 + _random.nextInt(5);
     return List.generate(count, (_) => _generateBudget(_uuid.v4()));
   }
 }

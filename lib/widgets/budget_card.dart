@@ -1,7 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rashodomer/widgets/base.dart';
 
+import 'package:rashodomer/widgets/base.dart';
 import '../models/budget.dart';
 import '../models/user.dart';
 
@@ -31,6 +32,8 @@ class BudgetCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   TitleText(text: budget.name),
+                  // if (kIsWeb)
+                    CopyableId(id: budget.id),
                 ],
               ),
             ),

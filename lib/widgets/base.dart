@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
@@ -34,6 +35,30 @@ class PriceText extends StatelessWidget {
       style: Theme.of(
         context,
       ).textTheme.headlineSmall?.copyWith(color: Colors.green),
+    );
+  }
+}
+
+class CopyableId extends StatelessWidget {
+  final String id;
+
+  const CopyableId({super.key, required this.id});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () async {
+        await Clipboard.setData(ClipboardData(text: id));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text('Скопировано')));
+      },
+      child: Card(
+        child: Padding(
+          padding: EdgeInsets.only(left: 10, right: 10),
+          child: Text('ID'),
+        ),
+      ),
     );
   }
 }
