@@ -32,16 +32,18 @@ class BudgetService {
           ? emojiList[_random.nextInt(emojiList.length)]
           : null,
       userId: _uuid.v4(),
+      createdAt: _faker.date.dateTimeBetween(DateTime(2025, 1, 1), DateTime(2025, 6, 30)),
+      updatedAt: _faker.date.dateTimeBetween(DateTime(2025, 1, 1), DateTime(2025, 12, 31)),
     );
   }
 
   Future<Budget> getBudget(String budgetId) async {
-    await Future.delayed(Duration(milliseconds: 5 + _random.nextInt(50)));
+    await Future.delayed(Duration(milliseconds: 0 + _random.nextInt(1)));
     return _generateBudget(budgetId);
   }
 
   Future<List<Budget>> getBudgets() async {
-    await Future.delayed(Duration(milliseconds: 15 + _random.nextInt(100)));
+    await Future.delayed(Duration(milliseconds: 0 + _random.nextInt(1)));
     final count = 1 + _random.nextInt(5);
     return List.generate(count, (_) => _generateBudget(_uuid.v4()));
   }

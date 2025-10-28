@@ -5,6 +5,8 @@ class Budget {
   final double amount;
   final String? emojiIcon;
   final String userId;
+  final DateTime createdAt;
+  final DateTime updatedAt;
 
   Budget({
     required this.id,
@@ -13,5 +15,7 @@ class Budget {
     required this.amount,
     required this.emojiIcon,
     required this.userId,
+    required this.createdAt,
+    required this.updatedAt,
   });
 }

@@ -34,7 +34,7 @@ class BudgetListPage extends StatelessWidget {
             itemCount: budgets.length,
             itemBuilder: (context, index) {
               final budget = budgets[index];
-              return BudgetCard(budget: budget, user: null);
+              return BudgetCard(budget: budget);
             },
           );
         },
